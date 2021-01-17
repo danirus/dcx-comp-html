@@ -4,7 +4,8 @@
     <meta charset="utf-8" />
     <title>django-comments-xtd comp demo</title>
     <link rel="stylesheet" type="text/css" href="fonts/stylesheet.css">
-    <link rel="stylesheet" type="text/css" href="main.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/comments.css">
   </head>
   <body>
     <header>
@@ -30,7 +31,76 @@
       </nav>
     </header>
     <main>
-      This is the main element.
+      <article>
+        <p>
+          The Comp Demo implements two apps, each of which contains a model whose instances can received comments:
+        </p>
+        <ol>
+          <li>App <code>articles</code> with the model <code>Article</code>.</li>
+          <li>App <code>quotes</code> with the model <code>Quote</code> contained inside the <code>extra</code> directory.</li>
+        </ol>
+        <h3>Features</h3>
+        <ol>
+          <li>Comments can be nested, and the maximum thread level is established to 2.</li>
+          <li>Comment confirmation via mail when the users are not authenticated.</li>
+          <li>Comments hit the database only after they have been confirmed.</li>
+          <li>Follow up notifications via mail.</li>
+          <li>Mute links to allow cancellation of follow-up notifications.</li>
+          <li>Registered users can like/dislike comments and can suggest comments removal.</li>
+          <li>Registered users can see the list of users that liked/disliked comments.</li>
+          <li>The homepage presents the last 5 comments posted either to the <code>articles.Article</code> or the <code>quotes.Quote</code> model.</li>
+        </ol>
+        <h4>Threaded comments</h4>
+        <p>The setting <code>COMMENTS_XTD_MAX_THREAD_LEVEL</code> is set to 2, meaning that comments may be threaded up to 2 levels below the the first level (internally known as level 0)::</p>
+        <pre><code>First comment (level 0)
+            |-- Comment to "First comment" (level 1)
+                |-- Comment to "Comment to First comment" (level 2)
+        </code></pre>
+        <h4><code>render_xtdcomment_tree</code></h4>
+        <p>
+          By using the <code>render_xtdcomment_tree</code> templatetag, both, <code>article_detail.html</code> and <code>quote_detail.html</code>, show the tree of comments posted. <code>article_detail.html</code> makes use of the arguments <code>allow_feedback</code>, <code>show_feedback</code> and <code>allow_flagging</code>, while <code>quote_detail.html</code> only show the list of comments, with no extra arguments, so users can't flag comments for removal, and neither can submit like/dislike feedback.
+        </p>
+        <h4><code>render_last_xtdcomments</code></h4>
+        <p>
+          The <strong>Last 5 Comments</strong> shown in the block at the rigght uses the templatetag <code>render_last_xtdcomments</code> to show the last 5 comments posted to either <code>articles.Article</code> or <code>quotes.Quote</code> instances. The templatetag receives the list of pairs <code>app.model</code> from which we want to gather comments and shows the given N last instances posted. The templatetag renders the template <code>django_comments_xtd/comment.html</code> for each comment retrieve.
+        </p>
+      </article>
+      <aside>
+        <h6 class="text-center">Last 5 comments</h6>
+        <div class="comment-list">
+          <div id="c2" class="comment-box">
+            <div class="user-avatar">
+              <img src="//www.gravatar.com/avatar/5449ef794aac7ca5096edbf437bd2675?s=48&amp;d=identicon" height="48" width="48">
+            </div>
+            <div class="comment">
+              <div class="comment-header">
+                Posted to &nbsp;<a href="/quotes/education/">On education</a>&nbsp;-&nbsp;12-January-2021 14:27h UTC+1&nbsp;-&nbsp;by Daniel Rus Morales&nbsp;&nbsp;<a class="permalink" title="comment permalink" href="/comments/cr/13/2/#c2">¶</a>
+              </div>
+              <div class="comment-content">
+                <p>This is the reply to the first comment.</p>
+              </div>
+            </div>
+          </div>
+
+          <div id="c1" class="comment-box">
+            <div class="user-avatar">
+              <img src="//www.gravatar.com/avatar/7736a08481eef8523e806cc98ea36192?s=48&amp;d=identicon" height="48" width="48" class="mr-3">
+            </div>
+            <div class="comment">
+              <div class="comment-header">
+                Posted to &nbsp;<a href="/quotes/education/">On education</a>&nbsp;-&nbsp;12-January-2021 16:19h UTC+1&nbsp;-&nbsp;by Daniela&nbsp;&nbsp;<a class="permalink" title="comment permalink" href="/comments/cr/13/2/#c1">¶</a>
+              </div>
+              <div class="comment-content">
+                <p>This is my first comment.</p>
+                <p>Let's imagine that it contains several paragraphs, and that they are long. If I wanted to add addition media content, like images, the comment would become a little bulky to be displayed in such a small space.</p>
+              </div>
+            </div>
+          </div>
+          <div class="text-right">
+            <a class="card-link" href="/comments/">comment list</a>
+          </div>
+        </div>
+      </aside>
     </main>
     <footer>
       This is the footer element.
