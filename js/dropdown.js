@@ -1,4 +1,8 @@
-// Look for elements with the class "dropdown".
+/*
+ * This JavaScript module is based on the code available at
+ * https://www.w3schools.com/howto/howto_custom_select.asp.
+ */
+
 function init() {
   const dropdowns = document.getElementsByClassName("dropdown");
   for (let i = 0; i < dropdowns.length; i++) {
@@ -14,32 +18,12 @@ function init() {
     const items = document.createElement("div");
     items.setAttribute("class", "select-items select-hide");
 
-    for (let j = 1; j < select.length; j++) {
+    for (let j = 0; j < select.length; j++) {
       // For each option in the original select element,
       // create a new DIV that will act as an option item.
       const opt_div = document.createElement("div");
       opt_div.innerHTML = select.options[j].innerHTML;
-      opt_div.addEventListener("click", function(e) {
-        // When an item is clicked, update the original
-        // select box and the selected item.
-        const _select = this.parentNode.parentNode
-                          .getElementsByTagName("select")[0];
-        const _hhh = this.parentNode.previousSibling;
-        for (let k = 0; k < _select.length; k++) {
-          if (select.options[k].innerHTML == this.innerHTML) {
-            select.selectedIndex = k;
-            _hhh.innerHTML = this.innerHTML;
-            const _yyy = this.parentNode
-                            .getElementsByClassName("same-as-selected");
-            for (let l = 0; l < _yyy.length; l++) {
-              _yyy[l].removeAttribute("class");
-            }
-            this.setAttribute("class", "same-as-selected");
-            break;
-          }
-        }
-        _hhh.click();
-      });
+      opt_div.addEventListener("click", selectItem);
       items.appendChild(opt_div);
     }
     dropdowns[i].appendChild(items);
@@ -51,6 +35,11 @@ function init() {
       this.nextSibling.classList.toggle("select-hide");
       this.classList.toggle("select-arrow-active");
     });
+
+    // Make a default selection.
+    opt_sel.innerHTML = select.options[select.selectedIndex].innerHTML;
+    const item_sel = items.children[select.selectedIndex];
+    item_sel.setAttribute("class", "same-as-selected");
   }
 
   // If the user clicks anywhere outside the
@@ -58,14 +47,35 @@ function init() {
   document.addEventListener("click", closeAllSelect);
 }
 
-function closeAllSelect(elmnt) {
+function selectItem(ev) {
+  // When an item is clicked, update the original
+  // select box and the selected item.
+  const select = this.parentNode.parentNode.getElementsByTagName("select")[0];
+  const opt_sel = this.parentNode.previousSibling;
+  for (let idx = 0; idx < select.length; idx++) {
+    if (select.options[idx].innerHTML == this.innerHTML) {
+      select.selectedIndex = idx;
+      opt_sel.innerHTML = this.innerHTML;
+      const items = this.parentNode.getElementsByClassName("same-as-selected");
+      for (let jdx = 0; jdx < items.length; jdx++) {
+        items[jdx].removeAttribute("class");
+      }
+      this.setAttribute("class", "same-as-selected");
+      break;
+    }
+  }
+  opt_sel.click();
+}
+
+
+function closeAllSelect(element) {
   // A function that will close all select boxes
   // in the document, except the current select box.
-  var x, y, i, xl, yl, arrNo = [];
+  var arrNo = [];
   const items = document.getElementsByClassName("select-items");
   const opt_sel = document.getElementsByClassName("option-selected");
   for (let i = 0; i < opt_sel.length; i++) {
-    if (elmnt == opt_sel[i]) {
+    if (element == opt_sel[i]) {
       arrNo.push(i)
     } else {
       opt_sel[i].classList.remove("select-arrow-active");
