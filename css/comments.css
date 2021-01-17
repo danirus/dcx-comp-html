@@ -1,0 +1,28 @@
+.comment-list > div             { margin-top: 16px; }
+.comment-list > div:first-child { margin-top: 0 }
+
+.comment-box {
+    display: flex;
+    flex-direction: row;
+    border: 1px solid rgba(0, 0, 0, .1);
+    padding: 8px;
+}
+
+.comment-box       A.permalink { display: none }
+.comment-box:hover A.permalink { display: inline }
+
+.user-avatar {
+    padding-right: 16px;
+}
+
+.comment {
+    flex-grow: 1;
+}
+
+.comment-header {
+    font-size: 0.7rem;
+}
+
+.comment-content {
+    font-size: 0.85rem;
+}

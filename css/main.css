@@ -34,7 +34,7 @@ body {
     flex-direction: column;
     margin: 0 auto;
     height: 100%;
-    max-width: 960px;
+    max-width: 1140px;
     font-weight: 400;
     font-family: "Assistant", sans-serif;
 }
@@ -48,6 +48,7 @@ header {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    border-bottom: 1px solid rgba(0, 0, 0, .1);
 }
 
 nav {
@@ -144,7 +145,7 @@ a > * {
 
 .dropdown .select-items {
     position: absolute;
-    padding: 0.4rem 0;
+    padding: 0;
     background-color: white;
     border: 1px solid rgba(0, 0, 0, .15);
     border-radius: 0.25rem;
@@ -174,6 +175,29 @@ a > * {
 }
 
 /* ------------------------------------------- */
+main {
+    margin-top: 24px;
+    display: flex;
+    direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+main > article {
+    max-width: 760px;
+}
+
+main > aside {
+    /* margin-top: 16px; */
+    flex-grow: 1;
+    /* border: 1px solid rgba(0, 0, 0, .1); */
+}
+
+.block {
+    padding: 0 16px 16px;
+}
+
+/* ------------------------------------------- */
 footer {
     flex-shrink: 0;
     margin: 32px 0 0;
@@ -189,3 +213,7 @@ footer p {
 
 footer a       { color: inherit }
 footer a:hover { color: black }
+
+/* ------------------------------------------- */
+.text-center { text-align: center; }
+.text-right { text-align: right; }
