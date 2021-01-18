@@ -48,7 +48,21 @@ header {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid rgba(0, 0, 0, .1);
+}
+
+footer {
+    flex-shrink: 0;
+    margin: 32px 0 0;
+    border-top: 1px solid rgba(0, 0, 0, .1);
+    padding: .5rem 0;
+    line-height: 1.5em;
+    font-size: 0.9rem;
+}
+
+footer p {
+    margin: 0.5rem auto;
+    text-align: center;
+    color: gray;
 }
 
 nav {
@@ -100,76 +114,6 @@ a > * {
     pointer-events: none;
 }
 
-/* ----------------------------------------------------------*/
-/* Style select element.
- * https://www.w3schools.com/howto/howto_custom_select.asp
- */
-
-.dropdown {
-    position: relative;
-}
-
-.dropdown select {
-    display: none;
-}
-
-.dropdown .option-selected {
-    color: rgb(39 155 247);
-    padding: .4rem 1rem;
-    border-radius: 0.25rem;
-    background-color: transparent;
-    font-size: .8rem;
-}
-.dropdown .option-selected:after {
-    position: absolute;
-    content: "";
-    top: 17px;
-    right: 10px;
-    width: 0;
-    height: 0;
-    border: 6px solid transparent;
-    border-color: rgb(39 155 247) transparent transparent transparent;
-}
-
-.dropdown .option-selected.select-arrow-active:after {
-    border-color: transparent transparent rgb(39 155 247) transparent;
-    top: 11px;
-}
-
-.dropdown .select-items div, .dropdown .option-selected {
-    padding: 8px 16px;
-    font-size: 0.8rem;
-    border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
-    cursor: pointer;
-}
-
-.dropdown .select-items {
-    position: absolute;
-    padding: 0;
-    background-color: white;
-    border: 1px solid rgba(0, 0, 0, .15);
-    border-radius: 0.25rem;
-    top: 100%;
-    left: 0;
-    right: 0;
-    z-index: 99;
-}
-
-.dropdown .select-hide {
-    display: none;
-}
-
-.dropdown .select-items div:hover {
-    background-color: #0a6ebd;;
-    color: white;
-}
-
-.dropdown .same-as-selected {
-    background-color: #2196f3;
-    color: white;
-}
-
-
 .language-dropdown {
     width: 180px;
 }
@@ -184,13 +128,12 @@ main {
 }
 
 main > article {
-    max-width: 760px;
+    flex-grow: 1;
 }
 
 main > aside {
-    /* margin-top: 16px; */
-    flex-grow: 1;
-    /* border: 1px solid rgba(0, 0, 0, .1); */
+    min-width: 364px;
+    margin-left: 16px;
 }
 
 .block {
@@ -215,5 +158,17 @@ footer a       { color: inherit }
 footer a:hover { color: black }
 
 /* ------------------------------------------- */
+.inline-centered {
+    display: flex;
+    justify-content: center;
+}
+.inline-centered > * {
+    display: inline-block;
+}
+
+code { color: rgb(33, 33, 169); }
+
+.small { font-size: 0.8rem }
+
 .text-center { text-align: center; }
 .text-right { text-align: right; }
