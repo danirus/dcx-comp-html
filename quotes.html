@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>django-comments-xtd comp demo</title>
+    <link rel="stylesheet" type="text/css" href="fonts/stylesheet.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/dropdown.css">
+    <link rel="stylesheet" type="text/css" href="css/comments.css">
+  </head>
+  <body>
+    <header>
+      <h2>comp demo</h2>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="articles.html">Articles</a>
+        <a class="active" href="quotes.html">Quotes</a>
+        <a href="comments.html">Comments</a>
+        <div class="dropdown language-dropdown">
+          <select>
+            <option value="nl">Nederlands, Dutch</option>
+            <option value="en">English, English</option>
+            <option value="fi">suomi, Finnish</option>
+            <option value="fr">français, French</option>
+            <option value="de">Deutsch, German</option>
+            <option value="no">Norsk, Norwegian</option>
+            <option value="ru">русский, Russian</option>
+            <option value="es">español, Spanish</option>
+          </select>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <article>
+        <h2 class="text-center">List of quotes</h2>
+        <div class="centered-w50">
+          <ul>
+            <li><a href="quote-on-education.html">On education</a><span class="small"> - by Maria Montessori - 2 comments</span></li>
+            <li><a href="quote-unusual-farewell.html">Unsual farewell</a><span class="small"> - by Bilbo Baggins</span></li>
+          </ul>
+        </div>
+      </article>
+    </main>
+    <footer>
+      <p>django-comments-xtd comp demo</p>
+    </footer>
+    <script type="module" src="js/dropdown.js"></script>
+  </body>
+</html>

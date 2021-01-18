@@ -5,17 +5,17 @@
     <title>django-comments-xtd comp demo</title>
     <link rel="stylesheet" type="text/css" href="fonts/stylesheet.css">
     <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/dropdown.css">
     <link rel="stylesheet" type="text/css" href="css/comments.css">
   </head>
   <body>
     <header>
       <h2>comp demo</h2>
       <nav>
-        <a href="/">Home</a>
-        <a href="/articles">Articles</a>
-        <a class="active" href="/quotes">Quotes</a>
-        <a href="/comments">Comments</a>
-        <a href="/login">Login</a>
+        <a class="active" href="index.html">Home</a>
+        <a href="articles.html">Articles</a>
+        <a href="quotes.html">Quotes</a>
+        <a href="comments.html">Comments</a>
         <div class="dropdown language-dropdown">
           <select>
             <option value="nl">Nederlands, Dutch</option>
@@ -51,11 +51,10 @@
           <li>The homepage presents the last 5 comments posted either to the <code>articles.Article</code> or the <code>quotes.Quote</code> model.</li>
         </ol>
         <h4>Threaded comments</h4>
-        <p>The setting <code>COMMENTS_XTD_MAX_THREAD_LEVEL</code> is set to 2, meaning that comments may be threaded up to 2 levels below the the first level (internally known as level 0)::</p>
+        <p>The setting <code>COMMENTS_XTD_MAX_THREAD_LEVEL</code> is set to 2, meaning that comments may be threaded up to 2 levels below the the first level (internally known as level 0):</p>
         <pre><code>First comment (level 0)
-            |-- Comment to "First comment" (level 1)
-                |-- Comment to "Comment to First comment" (level 2)
-        </code></pre>
+    |-- Comment to "First comment" (level 1)
+        |-- Comment to "Comment to First comment" (level 2)</code></pre>
         <h4><code>render_xtdcomment_tree</code></h4>
         <p>
           By using the <code>render_xtdcomment_tree</code> templatetag, both, <code>article_detail.html</code> and <code>quote_detail.html</code>, show the tree of comments posted. <code>article_detail.html</code> makes use of the arguments <code>allow_feedback</code>, <code>show_feedback</code> and <code>allow_flagging</code>, while <code>quote_detail.html</code> only show the list of comments, with no extra arguments, so users can't flag comments for removal, and neither can submit like/dislike feedback.
@@ -103,7 +102,7 @@
       </aside>
     </main>
     <footer>
-      This is the footer element.
+      <p>django-comments-xtd comp demo</p>
     </footer>
     <script type="module" src="js/dropdown.js"></script>
   </body>
