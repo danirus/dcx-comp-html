@@ -158,9 +158,12 @@ footer a       { color: inherit }
 footer a:hover { color: black }
 
 /* ------------------------------------------- */
-.centered-w50 {
-    width: 50%;
-    margin: 0 auto;
+.inline-centered {
+    display: flex;
+    justify-content: center;
+}
+.inline-centered > * {
+    display: inline-block;
 }
 
 code { color: rgb(33, 33, 169); }
