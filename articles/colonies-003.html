@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>django-comments-xtd comp demo</title>
+    <link rel="stylesheet" type="text/css" href="../fonts/stylesheet.css">
+    <link rel="stylesheet" type="text/css" href="../css/main.css">
+    <link rel="stylesheet" type="text/css" href="../css/dropdown.css">
+    <link rel="stylesheet" type="text/css" href="../css/comments.css">
+  </head>
+  <body>
+    <header>
+      <h2>comp demo</h2>
+      <nav>
+        <a href="../index.html">Home</a>
+        <a class="active" href="../articles.html">Articles</a>
+        <a href="../quotes.html">Quotes</a>
+        <a href="../comments.html">Comments</a>
+        <div class="dropdown language-dropdown">
+          <select>
+            <option value="nl">Nederlands, Dutch</option>
+            <option value="en">English, English</option>
+            <option value="fi">suomi, Finnish</option>
+            <option value="fr">français, French</option>
+            <option value="de">Deutsch, German</option>
+            <option value="no">Norsk, Norwegian</option>
+            <option value="ru">русский, Russian</option>
+            <option value="es">español, Spanish</option>
+          </select>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <article>
+        <h2 class="text-center">Posting a comment as a registered user</h2>
+        <h6 class="text-center small">June 16, 2011, 10:20 a.m.</h6>
+        <div class="central-column">
+          <div class="pb24">
+            <p>The human race is likely to be wiped out by a doomsday virus before the Millennium is out, unless we set up colonies in space, Prof Stephen Hawking warns today.</p>
+            <p>In an interview with The Telegraph, Prof Hawking, the world's best known cosmologist, says that biology, rather than physics, presents the biggest challenge to human survival.</p>
+            <p>"Although September 11 was horrible, it didn't threaten the survival of the human race, like nuclear weapons do," said the Cambridge University scientist.</p>
+            <p>"In the long term, I am more worried about biology. Nuclear weapons need large facilities, but genetic engineering can be done in a small lab. You can't regulate every lab in the world. The danger is that either by accident or design, we create a virus that destroys us.</p>
+            <p>"I don't think the human race will survive the next thousand years, unless we spread into space. There are too many accidents that can befall life on a single planet. But I'm an optimist. We will reach out to the stars."</p>
+          </div>
+          <div class="pb24 text-center">
+            <a href="../articles.html">Back to the articles list</a>
+          </div>
+          <section class="comment-form">
+            <h5 class="text-center">Post your comment</h5>
+            <form method="post" autocomplete="off">
+              <div class="col1-2">
+                <textarea required="" name="comment" id="id_comment" placeholder="Your comment" maxlength="3000"></textarea>
+              </div>
+              <div class="col2">
+                <input type="checkbox" name="followup" id="id_followup">
+                <label for="id_followup">&nbsp;Notify me about follow-up comments</label>
+              </div>
+              <div class="col2">
+                <div class="inline-left">
+                  <button class="primary" type="submit" name="post">send</button>&nbsp;
+                  <button class="secondary" name="preview">preview</button>
+                </div>
+              </div>
+            </form>
+          </section>
+        </div>
+      </article>
+    </main>
+    <footer>
+      <p>django-comments-xtd comp demo</p>
+    </footer>
+    <script type="module" src="../js/dropdown.js"></script>
+  </body>
+</html>
