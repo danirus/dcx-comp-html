@@ -79,7 +79,7 @@ function init() {
     throw new Error("Cannot initialize reactions panel => There are no " +
                     "elements with [data-type=reactions-panel].");
   }
-  create_buttons_panels(links);
+  create_buttons_panels(rroot, links);
 
   /* ----------------------------------------------
    * Initialize reactions-tooltips.
@@ -109,15 +109,17 @@ function toggle_buttons_panel(comment_id) {
   }
 }
 
-function create_buttons_panels(nodes) {
+function create_buttons_panels(rroot, nodes) {
+  const bottom = parseInt(rroot.getAttribute("data-pos-bottom")) || 0;
+  const left = parseInt(rroot.getAttribute("data-pos-left")) || 0;
   for (let elem of Array.from(nodes)) {
     const anchor_pos = elem.getBoundingClientRect();
     const footer_pos = elem.parentNode.getBoundingClientRect();
     const comment_id = elem.getAttribute("data-comment");
     if (comment_id != null) {
       const panel = document.createElement("div");
-      panel.style.bottom = "35px";
-      panel.style.left = `${anchor_pos.x - footer_pos.x -10}px`;
+      panel.style.bottom = `${bottom}px`;
+      panel.style.left = `${anchor_pos.x - footer_pos.x - left}px`;
       panel.className = "reactions-panel";
       panel.setAttribute("data-crpanel", `${comment_id}`);
 
@@ -169,12 +171,16 @@ function on_click_reaction_btn(crid, cid) {
 
 function on_mouseover_tooltip(event) {
   const parent_all = event.target.parentNode.parentNode;
+  const bottom = parseInt(parent_all.getAttribute("data-pos-bottom")) || 0;
+  const left = parseInt(parent_all.getAttribute("data-pos-left")) || 0;
   const tooltip = event.target.parentNode.children[0];
   const target_pos = event.target.getBoundingClientRect();
   const parent_all_pos = parent_all.getBoundingClientRect();
+  console.log(`target_pos.x=${target_pos.x}, parent_all_post.x=${parent_all_pos.x}, left=${left}`);
   if (tooltip.className == "reactions-tooltip") {
     tooltip.style.display = "block";
-    tooltip.style.left = `${-90 + target_pos.x - parent_all_pos.x}px`;
+    tooltip.style.bottom = `${bottom}px`;
+    tooltip.style.left = `${target_pos.x - parent_all_pos.x - left}px`;
   }
 }
 

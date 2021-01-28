@@ -1,5 +1,6 @@
-.comment-list > div             { margin-top: 16px; }
-.comment-list > div:first-child { margin-top: 0 }
+/* .comment-list > div             { margin-top: 8px; }
+.comment-list > div.level-1     { margin-top: 0px; }
+.comment-list > div:first-child { margin-top: 0 } */
 
 /* ----------------------------------------------------- */
 /* narrow-comment-box is used to show a shorter comment, with a small
@@ -66,7 +67,12 @@
 .comment-box {
     display: flex;
     flex-direction: row;
-    padding: 10px;
+    padding: 8px 16px;
+}
+
+.comment-box.level-1 {
+    margin-left: 80px;
+    padding: 4px 16px;
 }
 
 .comment-box       A.permalink { display: none }
@@ -81,22 +87,23 @@
 }
 
 .comment-box .header {
-    margin-bottom: 0.5rem;
+    margin-bottom: 4px;
     font-size: 0.8rem;
 }
 
 .comment-box .body {
-    border: 1px solid rgba(0, 0, 0, .1);
-    border-top: 3px solid rgba(0, 0, 0, .1);
+    border: 2px solid rgba(0, 0, 0, .1);
+    border-bottom: 4px solid rgba(0, 0, 0, .1);
     border-radius: 0.3rem;
     font-size: 0.9rem;
 }
 
-.comment-box .body > P  { margin: .8rem; }
+.comment-box .body > P  { margin: .6rem; }
 .comment-box .body > P + P { margin-top: 0; }
 
 .comment-box .footer {
-    margin-left: 16px;
+    padding: 4px 8px;
+    /* border-top: 2px solid rgba(0, 0, 0, .1); */
 }
 
 .comment-box:last-of-type {
