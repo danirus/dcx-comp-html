@@ -162,7 +162,6 @@ function on_mouseout_reaction_btn(header) {
 function on_click_reaction_btn(crid, cid) {
   return (event) => {
     event.preventDefault();
-    console.log(`Clicked on reaction ${crid} on comment ${cid}`);
     post_reaction({ comment: cid, reaction: crid }).then(data => {
       handle_reaction_response(cid, data);
     });
@@ -176,7 +175,6 @@ function on_mouseover_tooltip(event) {
   const tooltip = event.target.parentNode.children[0];
   const target_pos = event.target.getBoundingClientRect();
   const parent_all_pos = parent_all.getBoundingClientRect();
-  console.log(`target_pos.x=${target_pos.x}, parent_all_post.x=${parent_all_pos.x}, left=${left}`);
   if (tooltip.className == "reactions-tooltip") {
     tooltip.style.display = "block";
     tooltip.style.bottom = `${bottom}px`;
@@ -236,8 +234,6 @@ function create_reaction_btn(reaction, cid) {
 }
 
 function handle_reaction_response(cid, data) {
-  console.log(`handleReactionResponse for comment id`, cid);
-  console.log(`response data:`, data);
   const cm_reactions_div = document.getElementById(`cm-reactions-${cid}`);
   if(data.counter > 0) {
     const new_list = create_reactions_list(data);
