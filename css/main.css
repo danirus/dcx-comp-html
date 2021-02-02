@@ -305,6 +305,7 @@ code { color: rgb(33, 33, 169); }
 .text-right { text-align: right; }
 
 .pb24 { padding-bottom: 24px }
+.py06 { padding: .6rem 0; }
 
 .hide {
     display: none;
