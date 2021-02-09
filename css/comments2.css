@@ -1,5 +1,6 @@
 .comment-list > div.narrow-comment-box { margin-top: 8px; }
-.comment-list > div.level-1     { margin-top: 0px; }
+.comment-list > div.level-1,
+.comment-list > div.level-2 { margin-top: 0px; }
 .comment-list > div:first-child { margin-top: 0 }
 
 .user-avatar IMG {
@@ -110,11 +111,29 @@
     flex-shrink: 0;
 }
 
+.level-2 {
+    display: block;
+    width: 52px;
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+
 .comment-box.l1 .level-1:before {
     position: absolute;
     top: 0;
     bottom: 0;
     left: 52px;
+    display: block;
+    width: 2px;
+    content: "";
+    background-color: rgba(0, 0, 0, .1);
+}
+
+.comment-box.l2 .level-2:before {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 104px;
     display: block;
     width: 2px;
     content: "";
