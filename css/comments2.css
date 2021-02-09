@@ -68,28 +68,34 @@
  *  |                | |-------------------------------------------| |
  *  |----------------------------------------------------------------|
  */
-.comment-box, .reply-box {
+.comment-box {
     position: relative;
     display: flex;
     padding: 8px 0;
     margin-left: 16px;
 }
 
-.comment-box:before {
+.reply-box {
+    position: relative;
+    display: flex;
+    padding: 0;
+}
+
+.reply-box.l0 {
+    margin-left: 16px;
+}
+
+.reply-box.l0 .content {
+    /* In the case of .reply-box.l0 the 2nd child
+     * is the one that contains the btn. */
+    position: relative;
+    margin-left: 32px;
+}
+
+.comment-box.l0:before, .reply-box.l0.l1:before {
     position: absolute;
     top: 0;
     bottom: 0;
-    left: 0;
-    display: block;
-    width: 2px;
-    content: "";
-    background-color: rgba(0, 0, 0, .1);
-}
-
-.reply-box:before {
-    position: absolute;
-    top: 0;
-    bottom: 50%;
     left: 0;
     display: block;
     width: 2px;
@@ -104,13 +110,49 @@
     flex-shrink: 0;
 }
 
-.reply-box .level-1 {
+.comment-box.l1 .level-1:before {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 52px;
+    display: block;
+    width: 2px;
+    content: "";
+    background-color: rgba(0, 0, 0, .1);
+}
+
+.reply-box.l0:before, .reply-box.l0.l1 .level-1:before {
+    position: absolute;
+    top: 0;
+    bottom: 50%;
+    left: 0;
+    display: block;
+    width: 2px;
+    content: "";
+    background-color: rgba(0, 0, 0, .1);
+}
+
+.reply-box.l0.l1 .level-1:before {
+    left: 52px;
+}
+
+.reply-box .line-0, .reply-box .line-1 {
     position: absolute;
     top: 50%;
     left: 1px;
     border-top: 2px solid rgba(0, 0, 0, .1);
     transform: translateY(-50%);
+    display: block;
+    width: 52px;
+    flex-grow: 0;
+    flex-shrink: 0;
 }
+
+.reply-box .line-1 {
+    left: 53px;
+    width: 52px;
+}
+
 
 .comment-box       A.permalink { display: none }
 .comment-box:hover A.permalink { display: inline }
@@ -164,10 +206,16 @@
     padding-bottom: 32px;
 }
 
+.reply-box .content {
+    display: flex;
+    justify-content: left;
+    padding: .6rem 0;
+}
+
 /* ----------------------------------------------------- */
 .comment-form {
     margin: 16px;
-    border: 1px solid rgba(0, 0, 0, .1);
+    border: 8px solid rgba(0, 0, 0, .1);
     border-radius: 0.5rem;
     display: flex;
     flex-direction: column;
@@ -196,17 +244,6 @@
 .col1-2 { grid-column: 1/3 }
 
 /* ----------------------------------------------------- */
-.reply-box {
-    display: flex;
-    flex-direction: row;
-}
-
-/* The 2nd element (the one after the div.level-n must adjust the margin. */
-.reply-box :nth-child(2) {
-    position: relative;
-    margin-left: 32px;
-}
-
 .comment-reply-form {
     width: 100%;
     background-color: rgba(0, 0, 0, .1);
