@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>django-comments-xtd sample website</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="/fonts/stylesheet.css">
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+  <link rel="stylesheet" type="text/css" href="css/dropdown.css">
+</head>
+<body>
+  <header>
+    <div class="corset">
+      <div class="title">
+        <h1><a href="index.html">A sample website</a></h1>
+        <h4>with django-comments-xtd</h4>
+      </div>
+      <nav class="menu">
+        <a class="active" href="stories.html">Stories</a>
+        <a href="quotes.html">Quotes</a>
+        <div class="dropdown language-dropdown">
+          <select>
+            <option value="nl">Nederlands, Dutch</option>
+            <option value="en">English, English</option>
+            <option value="fi">suomi, Finnish</option>
+            <option value="fr">français, French</option>
+            <option value="de">Deutsch, German</option>
+            <option value="no">Norsk, Norwegian</option>
+            <option value="ru">русский, Russian</option>
+            <option value="es">español, Spanish</option>
+          </select>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <article>
+      <h2 class="text-center">List of stories</h2>
+      <div class="inline-centered">
+        <ul>
+          <li><a href="articles/colonies-001.html">Classic comment form - 001</a><span class="small"> - 16-June-2010</span></li>
+          <li><a href="articles/colonies-002.html">Reverse comment - 002</a><span class="small"> - 15-June-2010</span></li>
+          <li><a href="articles/colonies-003.html">Classic form for authenticated user - 003</a><span class="small"> - 14-June-2010</span></li>
+          <li><a href="articles/colonies-004.html">Classic form and two same level comments - 004</a><span class="small"> - 13-June-2010 - 2 comments</span></li>
+          <li><a href="articles/colonies-005.html">Classic form and nested comments (level 0-1) - 005</a><span class="small"> - 13-January-2011 - 4 comments</span></li>
+          <li><a href="articles/colonies-006.html">Classic, nested comments (level 0-2) using comments2.css - 006</a><span class="small"> - 12-January-2011 - 7 comments</span></li>
+        </ul>
+      </div>
+    </article>
+  </main>
+  <footer>
+    <div class="corset">
+      <p>django-comments-xtd</p>
+      <p>
+        <a href="http://readthedocs.org/docs/django-comments-xtd/">documentation</a>
+        &nbsp;&bull;&nbsp;
+        <a href="https://github.com/danirus/django-comments-xtd">source code</a>
+        &nbsp;&bull;&nbsp;
+        <a href="https://github.com/danirus/django-comments-xtd/issues">issues</a>
+        &nbsp;&bull;&nbsp;
+        <a href="https://github.com/danirus/django-comments-xtd/discussions">discussions</a>
+      </p>
+    </div>
+  </footer>
+  <script type="module" src="js/dropdown.js"></script>
+</body>
+</html>
