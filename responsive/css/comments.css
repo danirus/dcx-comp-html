@@ -76,6 +76,60 @@
     margin-left: 16px;
 }
 
+.level-1 {
+    display: block;
+    width: 52px;
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+
+.level-2 {
+    display: block;
+    width: 52px;
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+
+.comment-box.l0-ini:before,
+.comment-box.l0-mid:before {
+    position: absolute;
+    top: 0px;
+    bottom: 0;
+    left: 0;
+    display: block;
+    width: 2px;
+    content: "";
+    background-color: hsl(207deg 90% 34%);
+}
+.comment-box.l0-ini:before { top: 8px }
+
+.comment-box.l1-ini .level-1:before,
+.comment-box.l1-mid .level-1:before {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 52px;
+    display: block;
+    width: 2px;
+    content: "";
+    background-color: hsl(207deg 90% 54%);
+}
+.comment-box.l1-ini .level-1:before { top: 8px }
+
+.comment-box.l2-ini .level-2:before,
+.comment-box.l2-mid .level-2:before {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 104px;
+    display: block;
+    width: 2px;
+    content: "";
+    background-color: hsl(207deg 90% 74%);
+}
+.comment-box.l2-ini .level-2:before { top: 8px }
+
+
 .reply-box {
     position: relative;
     display: flex;
@@ -92,51 +146,15 @@
     width: 100%;
 }
 
-.comment-box.l0:before, .reply-box.l0.l1:before {
+.reply-box.l0.l1:before {
     position: absolute;
-    top: 0;
+    top: 0px;
     bottom: 0;
     left: 0;
     display: block;
     width: 2px;
     content: "";
     background-color: hsl(207deg 90% 34%);
-}
-
-.level-1 {
-    display: block;
-    width: 52px;
-    flex-grow: 0;
-    flex-shrink: 0;
-}
-
-.level-2 {
-    display: block;
-    width: 52px;
-    flex-grow: 0;
-    flex-shrink: 0;
-}
-
-.comment-box.l1 .level-1:before {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 52px;
-    display: block;
-    width: 2px;
-    content: "";
-    background-color: hsl(207deg 90% 54%);
-}
-
-.comment-box.l2 .level-2:before {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 104px;
-    display: block;
-    width: 2px;
-    content: "";
-    background-color: hsl(207deg 90% 74%);
 }
 
 .reply-box.l0:before, .reply-box.l0.l1 .level-1:before {
@@ -270,11 +288,11 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    border: 1px solid rgba(0, 0, 0, .1);
     border-radius: 0.5rem;
 }
 
 .reply-form.active {
+    border: 1px solid rgba(0, 0, 0, .1);
     padding: 16px;
 }
 
@@ -324,8 +342,11 @@ input, textarea {
 
 textarea {
     width: 100%;
-    height: 100%;
     padding: 8px 12px;
+}
+
+.comment-form textarea, .reply-form.active textarea {
+    height: 100%;
 }
 
 input:focus, textarea:focus {
