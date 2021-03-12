@@ -51,7 +51,7 @@
             There are 6 comments
           </h4>
 
-          <div class="comment-list" data-type="reactions-def" data-reactions="+,+1,#128077;-,-1,#128078;S,Smile,#128512;C,Confused,#128533;G,Great,#127881;H,Heart,#10084;R,Rocket,#128640;E,Eyes,#128064" data-reactions-url="/comments/api/react/" data-reactions-row-length="4" data-reactions-header-title="Pick your reaction" data-pos-bottom="30" data-pos-left="-7">
+          <div class="comment-list pb32" data-type="reactions-def" data-reactions="+,+1,#128077;-,-1,#128078;S,Smile,#128512;C,Confused,#128533;G,Great,#127881;H,Heart,#10084;R,Rocket,#128640;E,Eyes,#128064" data-reactions-url="/comments/api/react/" data-reactions-row-length="4" data-reactions-header-title="Pick your reaction" data-pos-bottom="30" data-pos-left="10">
 
             <div id="c1" class="comment-box l0">
               <div class="user-avatar">
@@ -66,7 +66,7 @@
                   <p>Let's imagine that it contains several paragraphs, and that they are long. If I wanted to add addition media content, like images, the comment would become a little bulky to be displayed in such a small space.</p>
                 </div>
                 <div class="footer" id="cm-footer-1">
-                  <div class="reactions" id="cm-reactions-1">
+                  <div id="cm-reactions-1">
                     <div class="active-reactions" data-pos-bottom="30" data-pos-left="76">
 
                       <span class="reaction" data-reaction="+">
@@ -94,9 +94,14 @@
                       </span>
 
                     </div>
-                    <span class="text-muted">&sdot;</span>
+                  </div>
+                  <div>
                     <a data-type="reactions-panel" data-comment="1" class="small" href="#">React</a>
-                    <span class="text-muted">&sdot;</span>
+                  </div>
+                  <div>
+                    <a data-type="reply" data-comment="1" class="small" href="#">Reply</a>
+                  </div>
+                  <div>
                     <a class="small" href="#">Fold 3 replies</a>
                   </div>
                 </div>
@@ -198,14 +203,6 @@
               </div>
             </div>
 
-            <div class="reply-box l0 l1">
-              <div class="level-1"></div>
-              <div class="line-1"></div>
-              <div class="content">
-                <button class="secondary small">Write a reply</button>
-              </div>
-            </div>
-
             <div id="c3" class="comment-box l0 l1">
               <div class="level-1"></div>
               <div class="user-avatar">
@@ -223,21 +220,6 @@
                     <a data-type="reactions-panel" data-comment="3" class="small" href="#">React</a>
                   </div>
                 </div>
-              </div>
-            </div>
-
-            <div class="reply-box l0 l1">
-              <div class="level-1"></div>
-              <div class="line-1"></div>
-              <div class="content">
-                <button class="secondary small">Write a reply</button>
-              </div>
-            </div>
-
-            <div class="reply-box l0">
-              <div class="line-0"></div>
-              <div class="content">
-                <button class="secondary small">Write a reply</button>
               </div>
             </div>
 
@@ -286,13 +268,6 @@
                     <a data-type="reactions-panel" data-comment="4" class="small" href="#">React</a>
                   </div>
                 </div>
-              </div>
-            </div>
-
-            <div class="reply-box l0">
-              <div class="line-0"></div>
-              <div class="content">
-                <button class="secondary small">Write a reply</button>
               </div>
             </div>
 

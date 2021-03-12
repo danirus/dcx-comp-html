@@ -114,7 +114,7 @@ function create_buttons_panels(rroot, nodes) {
   const left = parseInt(rroot.getAttribute("data-pos-left")) || 0;
   for (let elem of Array.from(nodes)) {
     const anchor_pos = elem.getBoundingClientRect();
-    const footer_pos = elem.parentNode.getBoundingClientRect();
+    const footer_pos = elem.parentNode.parentNode.getBoundingClientRect();
     const comment_id = elem.getAttribute("data-comment");
     if (comment_id != null) {
       const panel = document.createElement("div");
