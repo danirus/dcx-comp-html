@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>django-comments-xtd sample website</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="/fonts/stylesheet.css">
+    <link rel="stylesheet" type="text/css" href="../css/main.css">
+    <link rel="stylesheet" type="text/css" href="../css/dropdown.css">
+    <link rel="stylesheet" type="text/css" href="../css/comments.css">
+    <link rel="stylesheet" type="text/css" href="../css/reactions.css">
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="title">
+          <h1><a href="index.html">A sample website</a></h1>
+          <h4>with django-comments-xtd</h4>
+        </div>
+        <nav class="menu">
+          <a class="active" href="../stories.html">Stories</a>
+          <a href="../quotes.html">Quotes</a>
+          <div class="dropdown language-dropdown">
+            <select>
+              <option value="nl">Nederlands, Dutch</option>
+              <option value="en">English, English</option>
+              <option value="fi">suomi, Finnish</option>
+              <option value="fr">français, French</option>
+              <option value="de">Deutsch, German</option>
+              <option value="no">Norsk, Norwegian</option>
+              <option value="ru">русский, Russian</option>
+              <option value="es">español, Spanish</option>
+            </select>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <article>
+        <h2 class="text-center">Classic form and two same level comments</h2>
+        <h6 class="text-center small">June 16, 2011, 10:20 a.m.</h6>
+        <div class="central-column">
+          <div class="pb24">
+            <p>The human race is likely to be wiped out by a doomsday virus before the Millennium is out, unless we set up colonies in space, Prof Stephen Hawking warns today.</p>
+            <p>In an interview with The Telegraph, Prof Hawking, the world's best known cosmologist, says that biology, rather than physics, presents the biggest challenge to human survival.</p>
+            <p>"Although September 11 was horrible, it didn't threaten the survival of the human race, like nuclear weapons do," said the Cambridge University scientist.</p>
+            <p>"In the long term, I am more worried about biology. Nuclear weapons need large facilities, but genetic engineering can be done in a small lab. You can't regulate every lab in the world. The danger is that either by accident or design, we create a virus that destroys us.</p>
+            <p>"I don't think the human race will survive the next thousand years, unless we spread into space. There are too many accidents that can befall life on a single planet. But I'm an optimist. We will reach out to the stars."</p>
+          </div>
+          <div class="pb24 text-center">
+            <a href="../stories.html">Back to the story list</a>
+          </div>
+          <div class="comment-list" data-type="reactions-def" data-reactions="+,+1,#128077;-,-1,#128078;S,Smile,#128512;C,Confused,#128533;G,Great,#127881;H,Heart,#10084;R,Rocket,#128640;E,Eyes,#128064" data-reactions-url="/comments/api/react/" data-reactions-row-length="4" data-reactions-header-title="Pick your reaction" data-pos-bottom="22" data-pos-left="3">
+            <div id="c1" class="comment-box">
+              <div class="user-avatar">
+                <img src="//www.gravatar.com/avatar/7736a08481eef8523e806cc98ea36192?s=48&amp;d=identicon" height="64" width="64" class="mr-3">
+              </div>
+              <div class="comment">
+                <div class="header">
+                  by Daniela&nbsp;&sdot;&nbsp;<span class="muted">12-January-2021 16:19h UTC+1</span>&nbsp;&nbsp;<a class="permalink" title="comment permalink" href="/comments/cr/13/2/#c1">¶</a>
+                </div>
+                <div class="body">
+                  <p>This is my first comment.</p>
+                  <p>Let's imagine that it contains several paragraphs, and that they are long. If I wanted to add addition media content, like images, the comment would become a little bulky to be displayed in such a small space.</p>
+                </div>
+                <div class="footer" id="cm-footer-1">
+                  <div class="reactions" id="cm-reactions-1">
+                    <div class="active-reactions" data-pos-bottom="26" data-pos-left="84">
+
+                      <span class="reaction" data-reaction="+">
+                        <div class="reactions-tooltip">
+                          <div class="arrow"></div>
+                          <p>Pepi, Luci, Bom reacted with +1</p>
+                        </div>
+                        <a class="small text-primary" data-toggle="reactions-tooltip">3<span class="emoji">👍</span></a>
+                      </span>
+
+                      <span class="reaction" data-reaction="H">
+                        <div class="reactions-tooltip">
+                          <div class="arrow"></div>
+                          <p>Fulanito reacted with Heart</p>
+                        </div>
+                        <a class="small text-primary" data-toggle="reactions-tooltip">1<span class="emoji">❤</span></a>
+                      </span>
+
+                      <span class="reaction" data-reaction="R">
+                        <div class="reactions-tooltip">
+                          <div class="arrow"></div>
+                          <p>Theresa, Alice, Albert, Sonia, Antonio reacted with Rocket</p>
+                        </div>
+                        <a class="small text-primary" data-toggle="reactions-tooltip">5<span class="emoji">🚀</span></a>
+                      </span>
+
+                    </div>
+                    <span class="text-muted">&sdot;</span>
+                    <a data-type="reactions-panel" data-comment="1" class="small mutedlink" href="#">React</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div id="c2" class="comment-box">
+              <div class="user-avatar">
+                <img src="//www.gravatar.com/avatar/5449ef794aac7ca5096edbf437bd2675?s=48&amp;d=identicon" height="64" width="64">
+              </div>
+              <div class="comment">
+                <div class="header">
+                  by Daniel Rus Morales&nbsp;&sdot;&nbsp;<span class="muted">12-January-2021 14:27h UTC+1</span>&nbsp;&nbsp;<a class="permalink" title="comment permalink" href="/comments/cr/13/2/#c2">¶</a>
+                </div>
+                <div class="body">
+                  <p>This is the reply to the first comment.</p>
+                </div>
+                <div class="footer" id="cm-footer-2">
+                  <div class="reactions" id="cm-reactions-2">
+                    <div class="active-reactions" data-pos-bottom="26" data-pos-left="84">
+                      <span class="reaction" data-reaction="+">
+                        <div class="reactions-tooltip">
+                          <div class="arrow"></div>
+                          <p>Pepi, Luci, Bom reacted with +1</p>
+                        </div>
+                        <a class="small text-primary" data-toggle="reactions-tooltip">3<span class="emoji">👍</span></a>
+                      </span>
+                    </div>
+                    <span class="text-muted">&sdot;</span>
+                    <a data-type="reactions-panel" data-comment="2" class="small mutedlink" href="#">React</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <section class="comment-form">
+            <h5 class="text-center">Post your comment</h5>
+            <form method="post" autocomplete="off">
+              <div class="col1-2">
+                <textarea required="" name="comment" id="id_comment" placeholder="Your comment" maxlength="3000"></textarea>
+              </div>
+              <label class="col1" for="name">Name</label>
+              <div class="col2">
+                <input type="text" name="name" required="" id="id_name" placeholder="name" value="">
+              </div>
+              <label class="col1" for="pwd">Mail</label>
+              <div class="col2">
+                <input type="email" name="email" required="" id="id_mail" placeholder="mail address" value="">
+              </div>
+              <div class="col2 helper-text">Required for comment verification. Otherwise <a href="/login">login</a>.</div>
+              <label class="col1" for="link">Your link</label>
+              <div class="col2">
+                <input type="text" name="url" id="id_url" value="" placeholder="homepage or public profile ">
+              </div>
+              <div class="col2">
+                <input type="checkbox" name="followup" id="id_followup">
+                <label for="id_followup">&nbsp;Notify me about follow-up comments</label>
+              </div>
+              <div class="col2">
+                <div class="inline-left">
+                  <button class="primary" type="submit" name="post">send</button>&nbsp;
+                  <button class="secondary" name="preview">preview</button>
+                </div>
+              </div>
+            </form>
+          </section>
+        </div>
+      </article>
+    </main>
+    <footer>
+      <p>django-comments-xtd comp demo</p>
+    </footer>
+    <script type="module" src="../js/dropdown.js"></script>
+    <script type="module" src="../js/reactions.js"></script>
+  </body>
+</html>

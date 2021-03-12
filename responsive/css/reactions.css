@@ -58,6 +58,7 @@ button.emoji {
   outline: none;
   background: white;
   font-size: 1.2rem;
+  font-family: "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
 button.emoji:hover, button.emoji:focus {
@@ -114,9 +115,9 @@ button.emoji:hover, button.emoji:focus {
   border-top-color: #000;
 }
 
-.reactions, .active-reactions { display: inline-block }
-.reaction                     { padding-right: 8px }
-.reaction:last-child          { padding-right: 0px }
+.active-reactions    { display: inline-block }
+.reaction            { padding-right: 8px }
+.reaction:last-child { padding-right: 0px }
 
 .reaction > a > * {
   /* Nothing within the anchor elements should have pointer events. */
@@ -125,5 +126,6 @@ button.emoji:hover, button.emoji:focus {
 
 .reaction .emoji {
   padding: 0 0 0 3px;
-  font-size: .9rem;
+  font-size: .65rem;
+  font-family: "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }

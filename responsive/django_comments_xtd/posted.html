@@ -5,8 +5,8 @@
   <title>django-comments-xtd sample website</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="/fonts/stylesheet.css">
-  <link rel="stylesheet" type="text/css" href="css/main.css">
-  <link rel="stylesheet" type="text/css" href="css/dropdown.css">
+  <link rel="stylesheet" type="text/css" href="../css/main.css">
+  <link rel="stylesheet" type="text/css" href="../css/dropdown.css">
 </head>
 <body>
   <header>
@@ -33,22 +33,13 @@
       </nav>
     </div>
   </header>
-  <main>
-    <article>
-      <h2 class="text-center">List of stories</h2>
+  <main class="hero">
+    <div class="container">
+      <h2 class="text-center">Comment confirmation requested</h2>
       <div class="inline-centered">
-        <ul>
-          <li><a href="stories/colonies-001.html">Classic comment form - 001</a><span class="small"> - 16-June-2010</span></li>
-          <li><a href="stories/colonies-002.html">Reverse comment - 002</a><span class="small"> - 15-June-2010</span></li>
-          <li><a href="stories/colonies-003.html">Classic form for authenticated user - 003</a><span class="small"> - 14-June-2010</span></li>
-          <li><a href="stories/colonies-004.html">Classic form and two same level comments - 004</a><span class="small"> - 13-June-2010 - 2 comments</span></li>
-          <li><a href="stories/colonies-005.html">Classic form and nested comments (level 0-1) - 005</a><span class="small"> - 13-January-2011 - 4 comments</span></li>
-          <li><a href="stories/colonies-006.html">Classic, nested comments (level 0-2) using comments.css - 006</a><span class="small"> - 12-January-2011 - 6 comments</span></li>
-          <li><a href="stories/colonies-007.html">Nested comments (level 0-2) without far away reply button - 007</a><span class="small"> - 13-January-2011 - 6 comments</span></li>
-          <li><a href="stories/colonies-008.html">Nested comments (level 0-2) with visible reply form - 008</a><span class="small"> - 14-January-2011 - 6 comments</span></li>
-        </ul>
+          <p>A confirmation message has been sent to your email address. Please, click on the link in the message to confirm your comment.</p>
       </div>
-    </article>
+    </div>
   </main>
   <footer>
     <div class="container">
@@ -64,6 +55,6 @@
       </p>
     </div>
   </footer>
-  <script type="module" src="js/dropdown.js"></script>
+  <script type="module" src="../js/dropdown.js"></script>
 </body>
 </html>

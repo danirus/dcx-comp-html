@@ -51,7 +51,7 @@
             There are 6 comments
           </h4>
 
-          <div class="comment-list" data-type="reactions-def" data-reactions="+,+1,#128077;-,-1,#128078;S,Smile,#128512;C,Confused,#128533;G,Great,#127881;H,Heart,#10084;R,Rocket,#128640;E,Eyes,#128064" data-reactions-url="/comments/api/react/" data-reactions-row-length="4" data-reactions-header-title="Pick your reaction" data-pos-bottom="30" data-pos-left="-7">
+          <div class="comment-list pb32" data-type="reactions-def" data-reactions="+,+1,#128077;-,-1,#128078;S,Smile,#128512;C,Confused,#128533;G,Great,#127881;H,Heart,#10084;R,Rocket,#128640;E,Eyes,#128064" data-reactions-url="/comments/api/react/" data-reactions-row-length="4" data-reactions-header-title="Pick your reaction" data-pos-bottom="30" data-pos-left="10">
 
             <div id="c1" class="comment-box l0">
               <div class="user-avatar">
@@ -66,7 +66,7 @@
                   <p>Let's imagine that it contains several paragraphs, and that they are long. If I wanted to add addition media content, like images, the comment would become a little bulky to be displayed in such a small space.</p>
                 </div>
                 <div class="footer" id="cm-footer-1">
-                  <div class="reactions" id="cm-reactions-1">
+                  <div id="cm-reactions-1">
                     <div class="active-reactions" data-pos-bottom="30" data-pos-left="76">
 
                       <span class="reaction" data-reaction="+">
@@ -94,9 +94,11 @@
                       </span>
 
                     </div>
-                    <span class="text-muted">&sdot;</span>
+                  </div>
+                  <div>
                     <a data-type="reactions-panel" data-comment="1" class="small" href="#">React</a>
-                    <span class="text-muted">&sdot;</span>
+                  </div>
+                  <div>
                     <a class="small" href="#">Fold 3 replies</a>
                   </div>
                 </div>
@@ -135,7 +137,7 @@
               </div>
             </div>
 
-            <div id="c5" class="comment-box l0 l1 l2">
+            <div id="c5" class="comment-box l0 l1 l2max">
               <div class="level-1"></div>
               <div class="level-2"></div>
               <div class="user-avatar">
@@ -166,7 +168,7 @@
               </div>
             </div>
 
-            <div id="c6" class="comment-box l0 l1 l2">
+            <div id="c6" class="comment-box l0 l1 l2max">
               <div class="level-1"></div>
               <div class="level-2"></div>
               <div class="user-avatar">
@@ -202,7 +204,19 @@
               <div class="level-1"></div>
               <div class="line-1"></div>
               <div class="content">
-                <button class="secondary small">Write a reply</button>
+                <section class="reply-form">
+                  <form method="post" autocomplete="off">
+                    <div class="col1-2">
+                      <textarea required="" rows="1" name="comment" placeholder="Your reply" maxlength="3000"></textarea>
+                    </div>
+                    <div class="col2 hide">
+                      <div class="inline-left">
+                        <button class="primary small" type="submit" name="post">send</button>&nbsp;
+                        <button class="secondary small" name="preview">preview</button>
+                      </div>
+                    </div>
+                  </form>
+                </section>
               </div>
             </div>
 
@@ -230,14 +244,39 @@
               <div class="level-1"></div>
               <div class="line-1"></div>
               <div class="content">
-                <button class="secondary small">Write a reply</button>
+                <section class="reply-form">
+                  <form method="post" autocomplete="off">
+                    <div class="col1-2">
+                      <textarea required="" rows="1" name="comment" placeholder="Your reply" maxlength="3000"></textarea>
+                    </div>
+                    <div class="col2 hide">
+                      <div class="inline-left">
+                        <button class="primary small" type="submit" name="post">send</button>&nbsp;
+                        <button class="secondary small" name="preview">preview</button>
+                      </div>
+                    </div>
+                  </form>
+                </section>
+
               </div>
             </div>
 
             <div class="reply-box l0">
               <div class="line-0"></div>
               <div class="content">
-                <button class="secondary small">Write a reply</button>
+                <section class="reply-form">
+                  <form method="post" autocomplete="off">
+                    <div class="col1-2">
+                      <textarea required="" rows="1" name="comment" placeholder="Your reply" maxlength="3000"></textarea>
+                    </div>
+                    <div class="col2 hide">
+                      <div class="inline-left">
+                        <button class="primary small" type="submit" name="post">send</button>&nbsp;
+                        <button class="secondary small" name="preview">preview</button>
+                      </div>
+                    </div>
+                  </form>
+                </section>
               </div>
             </div>
 
@@ -292,7 +331,43 @@
             <div class="reply-box l0">
               <div class="line-0"></div>
               <div class="content">
-                <button class="secondary small">Write a reply</button>
+                <section class="reply-form active">
+                  <form method="post" autocomplete="off">
+                    <div class="col1-2">
+                      <textarea required="" rows="3" name="comment" placeholder="Your reply" maxlength="3000"></textarea>
+                    </div>
+
+                    <label class="col1" for="name">Name</label>
+                    <div class="col2 error">
+                      <input type="text" name="name" required="" id="id_name" placeholder="name" value="">
+                    </div>
+                    <div class="col2 helper-text error">This field is required.</div>
+
+                    <label class="col1" for="pwd">Mail</label>
+                    <div class="col2">
+                      <input type="email" name="email" required="" id="id_mail" placeholder="mail address" value="">
+                    </div>
+                    <div class="col2 helper-text">Required for comment verification. Otherwise <a href="/login">login</a>.</div>
+
+                    <label class="col1" for="link">Your link</label>
+                    <div class="col2">
+                      <input type="text" name="url" id="id_url" value="" placeholder="homepage or public profile ">
+                    </div>
+
+                    <div class="col2">
+                      <input type="checkbox" name="followup" id="id_followup">
+                      <label for="id_followup">&nbsp;Notify me about follow-up comments</label>
+                    </div>
+
+                    <div class="col2">
+                      <div class="inline-left">
+                        <button class="primary small" type="submit" name="post">send</button>&nbsp;
+                        <button class="secondary small" name="preview">preview</button>&nbsp;
+                        <button class="secondary small" name="cancel">cancel</button>
+                      </div>
+                    </div>
+                  </form>
+                </section>
               </div>
             </div>
 

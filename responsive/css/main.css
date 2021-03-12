@@ -39,21 +39,28 @@ body {
 }
 
 /* ----------------------------------------- */
-.corset {
+.container {
   margin: 0 auto;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
 }
 
+header .container,
+footer .container { flex-direction: row }
+
 @media screen and (min-width: 1172px) {
-  .corset {
+  .container {
     width: 1140px;
+  }
+  .container.md {
+    width: 820px;
   }
 }
 
 @media screen and (min-width: 840px) and (max-width: 1171px) {
-  .corset {
+  .container {
     width: 100%;
     padding-left: 16px;
     padding-right: 16px;
@@ -61,8 +68,12 @@ body {
 }
 
 @media screen and (max-width: 839px) {
-  .corset {
+  .container {
     width: 100%;
+  }
+
+  header .container,
+  footer .container {
     flex-direction: column;
   }
 }
@@ -208,7 +219,8 @@ a > * {
 
 /* ------------------------------------ */
 @media screen and (min-width: 840px) {
-  .hero .corset, .intro .corset {
+  .hero .container,
+  .intro .container {
     width: 780px;
   }
 }
@@ -238,11 +250,10 @@ a > * {
   }
 }
 
-/* -------------- */
-
-.intro .corset {
+.intro .container {
   flex-direction: column;
 }
+
 /* ------------------------------------ */
 
 main {
@@ -342,6 +353,38 @@ footer p a { color: white }
   margin: 0 auto;
   max-width: 735px;
 }
+
+.marquee {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+  flex-grow: 1;
+  background-color: aliceblue;
+  padding: 16px;
+}
+
+.marquee div {
+  display: flex;
+  flex-direction: column;
+}
+
+.wo-y-margins * { margin-top: 0; margin-bottom: 0 }
+
+.expand {
+  justify-content: space-between;
+}
+
+.alert {
+  margin-bottom: 16px;
+  padding: 8px 16px;
+  border-radius: 4px;
+}
+
+.alert-info {  background-color:aliceblue }
+.alert-success { background-color: #dbffe4 }
+.alert-warn { background-color: #fff6e6 }
+.alert-error { background-color: #ffdede }
 
 /* ------- buttons --------- */
 
@@ -464,13 +507,19 @@ button.secondary:not(:disabled):not(.disabled).active:focus {
 
 /* ------- helpers --------- */
 
-.small { font-size: 0.8rem }
+.text-success { color: green }
+.text-info { color: #0088ff }
+.text-warn { color: orange }
+.text-error { color: red }
+
+.small { font-size: 0.75rem }
 .muted { color: rgb(162, 162, 162); }
 
 .text-center { text-align: center; }
 .text-right { text-align: right; }
 
 .pb24 { padding-bottom: 24px }
+.pb32 { padding-bottom: 32px }
 .py06 { padding: .6rem 0; }
 
 .hide {
