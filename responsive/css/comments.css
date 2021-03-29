@@ -172,7 +172,6 @@
 
 .reply-box .line-1 {
     left: 53px;
-    /* width: 52px; */
     border-color: hsl(207deg 90% 54%);
 }
 
@@ -197,7 +196,9 @@
 }
 
 .comment-box .header {
-    margin-bottom: 4px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 8px 4px 8px;
     font-size: 0.8rem;
 }
 
@@ -233,12 +234,6 @@
 .comment-box .footer > DIV:last-child::after {
     content: "";
 }
-
-/* .comment-box .footer > :first-child { margin: 0 .6rem; } */
-
-/* .comment-box:last-of-type {
-    padding-bottom: 32px;
-} */
 
 .reply-box .content {
     display: flex;
@@ -297,17 +292,6 @@
 
 
 /* ----------------------------------------------------- */
-HR.comment-level-break {
-    margin: 16px 16px;
-    border-color: rgba(0, 0, 0, .1);
-}
-
-HR.comment-level-break:last-of-type {
-    margin-bottom: 48px;
-}
-
-
-/* ----------------------------------------------------- */
 label {
     margin: auto 0;
     text-align: right;
@@ -363,3 +347,4 @@ input.error:focus, textarea.error:focus,
 }
 
 .helper-text.error { color: red }
+.bold { font-weight: bold }
