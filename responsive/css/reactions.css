@@ -129,3 +129,19 @@ button.emoji:hover, button.emoji:focus {
   font-size: .65rem;
   font-family: "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
+
+/* ----------------------------------------------------- */
+.reaction-form div {
+  display: flex;
+  justify-content: center;
+}
+
+.reaction-form div button {
+  /* flex-grow: 1; */
+  margin: 2px;
+}
+
+.reaction-form .emoji {
+  font-size: 1rem;
+  font-family: "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}

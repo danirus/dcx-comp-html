@@ -507,6 +507,8 @@ button.secondary:not(:disabled):not(.disabled).active:focus {
 
 /* ------- helpers --------- */
 
+.fw3 { font-weight: 300 }
+
 .text-success { color: green }
 .text-info { color: #0088ff }
 .text-warn { color: orange }
